@@ -22,3 +22,19 @@ python3 web_app.py
 ```
 
 Then open [http://localhost:5000](http://localhost:5000) in your browser.
+
+## PredictIt Trading Agent
+
+`predictit_agent.py` fetches price data from the official PredictIt API and
+simulates buying a random contract. Subsequent price updates are logged to a
+CSV file called `trading_log.csv`.
+
+Run it with:
+
+```bash
+pip install requests
+python3 predictit_agent.py --iterations 5 --delay 2 --log mylog.csv
+```
+
+If market data can't be fetched due to network restrictions, the log will be
+empty and a warning message will be printed.
